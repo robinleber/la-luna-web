@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Buffet Script";
+    src: url("../types/Buffet\ Script.otf");
+}
+
+@media screen and (max-width: 600px) {
+    .laluna {
+        padding: 7rem 0 !important;
+    }
+    .laluna__body {
+        padding: 0 1rem;
+    }
+}
+
+:root {
+    --black: #1a120c;
+    --brown: #953e0c;
+    --dough-white: bisque;
+    --green: #1ebb33;
+    --red: #bb2b1e;
+    --white: whitesmoke;
+    --wine-red: brown;
+    --wine-red-trans: #160207ec;
+}
+
+body {
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background: url("/images/lalunatable2blurred.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Lato", sans-serif;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.laluna {
+    height: 100%;
+    padding: 7rem;
+}
+
+.laluna__navbar {
+    background-color: var(--wine-red-trans);
+    color: var(--dough-white) !important;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.navbar-brand {
+    font-family: "Buffet Script";
+}
+
+.navbar-toggler .fas {
+    color: var(--dough-white);
+}
+
+.navbar-collapse {
+    margin-left: 40px;
+    padding: 0em;
+}
+
+.nav-item {
+    padding: .25em 1em;
+    position: relative;
+    overflow: hidden;
+    /* border-radius: .25rem; */
+}
+
+.nav-item+.nav-item {
+    margin-left: 5px;
+}
+
+.nav-item::before {
+    height: 100%;
+    content: "";
+    width: 0px;
+    position: absolute;
+    top: 0px;
+    border-bottom: solid 2px var(--dough-white);
+    left: 0px;
+    z-index: -1;
+    transition: width .4s ease-out, color .2s ease;
+}
+
+.nav-item:hover.nav-item::before, .nav-item.active::before {
+    width: 100%;
+}
+
+.nav-link span {
+    color: var(--dough-white);
+}
+
+.nav-link .fas {
+    margin-right: 10px;
+}
+
+.laluna__header {
+    color: var(--dough-white);
+    text-align: center;
+    text-shadow: 0px 0px 5px #000000;
+}
+
+.laluna__header .row {
+    margin-top: 0 !important;
+}
+
+.laluna__header .title {
+    font-family: "Buffet Script", serif;
+    font-size: 5rem;
+}
+
+.laluna__header .subtitle {
+    font-family: "Merriweather", serif;
+    font-size: 1.3rem;
+}
+
+.laluna__header hr {
+    border-color: var(--wine-red);
+}
+
+.laluna__body {
+    font-family: "Lato", sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 14rem;
+}
+
+.laluna__body .row+.row {
+    margin-top: 30px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    transition: background-color .2s ease;
+}
+
+.carousel-control-next:hover, .carousel-control-prev:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card {
+    -moz-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.75);
+    background-color: var(--dough-white);
+    border: 1px solid var(--dough-white);
+    box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.75);
+    color: var(--wine-red);
+}
+
+.card .card {
+    box-shadow: none;
+}
+
+.card-header {
+    align-items: center;
+    display: flex;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+.card-header .fas {
+    margin-right: 10px;
+}
+
+.card-header a {
+    font-size: .7em;
+}
+
+.card--opening-times .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card--opening-times th {
+    font-family: "Merriweather", serif;
+}
+
+#hours-approach {
+    align-items: stretch;
+}
+
+.card--approach .card-maps {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+}
+
+.card--owner {
+    padding-bottom: 0;
+}
+
+.card--social-body {
+    border-radius: 0 0 .25rem .25rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card--social .social-split {
+    overflow: hidden;
+    width: 100%;
+}
+
+.card--social .social-link {
+    color: var(--dough-white);
+    cursor: pointer;
+    font-size: 1.75em;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: transform .2s ease;
+    width: 100%;
+}
+
+.card--social .social-link:hover {
+    transform: scale(1.25);
+}
+
+.card--social .social-link--fb {
+    background-color: #4267B2;
+}
+
+.card--social .social-link--yelp {
+    background-color: #d32323;
+}
+
+.laluna__sidebar {
+    background-color: var(--wine-red-trans);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 300px;
+}
+
+.sidebar__header {
+    background-color: var(--dough-white);
+    height: 300px;
+}
+
+.sidebar__header img {
+    height: 100%;
+}
+
+.laluna__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000ca;
+    padding: 4% 16%;
+    color: var(--dough-white);
+}
+
+.laluna__footer [class^="col"] {
+    display: flex;
+    flex-direction: column;
+}
