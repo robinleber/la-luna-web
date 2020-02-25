@@ -2,6 +2,14 @@
     font-family: "Merriweather", serif;
 }
 
+.bg-danger {
+    background-color: brown !important;
+}
+
 .bg-warning {
     background-color: orangered !important;
+}
+
+.bg-success {
+    background-color: green !important;
 }

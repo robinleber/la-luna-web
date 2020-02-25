@@ -178,36 +178,39 @@
                 <div id="hours-approach" class="row">
                     <!-- Opening Hours -->
                     <div class="col-lg-5 col-md-12">
-                        <div class="card card--opening-times text-white bg-warning mb-3" height="100%">
+                        <div class="card card--opening-times text-white bg-danger mb-4" height="100%">
                             <div class="card-header">
                                 <span>
-                                    <i class="fas fa-clock"></i>
+                                    <i class="fas fa-door-open"></i>
                                     Öffnungszeiten
                                 </span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <i class="fas fa-door-open"></i>
-                                    &nbsp;
-                                    Wir schließen bald
+                                    <!-- <i class="fas fa-door-closed"></i>
+                                    &nbsp; -->
+                                    Wir haben zurzeit geschlossen
                                 </h5>
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <th>Montag</th>
-                                            <td>Ruhetag</td>
+                                            <th colspan="2">Montag</th>
                                         </tr>
                                         <tr>
-                                            <th>Dienstag & Mittwoch</th>
-                                            <td>17.00 - 22.30 Uhr</td>
+                                            <td colspan="2">─ Ruhetag ─</td>
                                         </tr>
                                         <tr>
-                                            <th>Donnerstag - Sonntag</th>
-                                            <td>11.00 - 14.30 Uhr</td>
+                                            <th colspan="2">Dienstag & Mittwoch</th>
                                         </tr>
                                         <tr>
-                                            <th></th>
-                                            <td>17.00 - 22.30 Uhr</td>
+                                            <td colspan="2">17:00 - 22:30 Uhr</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="2">Donnerstag ─ Sonntag</th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1">11:00 - 14:30 Uhr</td>
+                                            <td colspan="1">17:00 - 22:30 Uhr</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -219,7 +222,7 @@
                         <div class="card card--approach">
                             <div class="card-header">
                                 <span>
-                                    <i class="fas fa-car"></i>
+                                    <i class="fas fa-map-marked-alt"></i>
                                     Anfahrt
                                 </span>
                                 <a target="_blank"
@@ -229,9 +232,9 @@
                                 </a>
                             </div>
                             <div class="card-maps">
-                                <iframe width="100%" height="200px" frameborder="0" style="border:0"
-                                    src="https://www.google.com/maps/embed/v1/place?q=La Luna&key=AIzaSyDtYRcC9V9esVPX6ySnBnwQawqILSLSWIs&zoom=18&maptype=roadmap"
-                                    allowfullscreen=""></iframe>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.6256994744886!2d8.121671449608577!3d50.417976373166525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc3360161384cd%3A0x60532917aaa97af3!2sRestaurante%20La%20Luna!5e0!3m2!1sde!2sde!4v1582616217163!5m2!1sde!2sde"
+                                    width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                             </div>
                         </div>
                     </div>
@@ -271,8 +274,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Owner & Web Presence -->
                 <div class="row">
-                    <div class="col-lg-8 col-sm-12">
+                    <!-- Owner -->
+                    <div class="col-lg-8 col-sm-12 mb-4">
                         <div id="owner" class="card card--owner">
                             <div class="card-header">
                                 <span>
@@ -280,7 +285,7 @@
                                     Inhaber
                                 </span>
                             </div>
-                            <div class="card mb-3">
+                            <div class="card mb-4">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="images/lalunaibrahimyalcin.png" class="card-img" alt="...">
@@ -301,6 +306,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Web Presence -->
                     <div class="col-lg-4 col-sm-12">
                         <div class="card card--social">
                             <div class="card-header">
@@ -318,6 +324,10 @@
                                 <div class="social-split">
                                     <a href="https://www.yelp.de/biz/la-luna-runkel" target="_blank" title="Yelp"
                                         class="fab fa-yelp social-link social-link--yelp"></a>
+                                </div>
+                                <div>
+                                    <a href="https://www.yelp.de/biz/la-luna-runkel" target="_blank" title="Yelp"
+                                    class="fab fa-google social-link social-link--google"></a>
                                 </div>
                             </div>
                         </div>

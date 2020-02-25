@@ -58,6 +58,11 @@ body {
     z-index: 99;
 }
 
+.laluna__navbar ul:last-child {
+    float: right;
+    position: absolute;
+}
+
 .navbar-brand {
     font-family: "Buffet Script";
 }
@@ -148,10 +153,10 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.card {
+.card:not([class*="bg-"]) {
     -moz-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.75);
-    background-color: var(--dough-white);
+    background-color: var(--dough-white) !important;
     border: 1px solid var(--dough-white);
     box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.75);
     color: var(--wine-red);
@@ -177,18 +182,31 @@ body {
     font-size: .7em;
 }
 
+.card--opening-times {
+    height: 358px;
+}
+
 .card--opening-times .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+}
+
+.card--opening-times .card-title {
+    /* font-family: "Merriweather", serif; */
+    font-weight: 700;
+    border: 1px solid var(--dough-white);
+    padding: 15px;
+}
+
+.card--opening-times table {
+    width: 100%;
 }
 
 .card--opening-times th {
-    font-family: "Merriweather", serif;
+    font-size: 1.1em;
 }
 
 #hours-approach {
-    align-items: stretch;
+    /* align-items: center; */
 }
 
 .card--approach .card-maps {
@@ -233,6 +251,10 @@ body {
 }
 
 .card--social .social-link--yelp {
+    background-color: #d32323;
+}
+
+.card--social .social-link--google {
     background-color: #d32323;
 }
 
