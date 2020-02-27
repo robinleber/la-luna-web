@@ -1,33 +1,129 @@
+@media screen and (max-width: 625px) {
+    .gallery__showcase .card-image {
+        height: auto !important;
+        max-height: 600px;
+    }
+}
+
+:root {
+    --black: #0E2431;
+    --black-trans: #0E2431b9;
+    --brown: #953e0c;
+    --dough-white: #FAF4D0;
+    --green: #1ebb33;
+    --red: #bb2b1e;
+    --white: whitesmoke;
+    --wine-red: brown;
+    --wine-red-trans: #160207ec;
+    font-size: 13px;
+}
+
 .laluna--gallery {
-    padding: 7rem 0;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 7rem 0;
 }
 
-.card {
+.gallery__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery__body .card {
+    cursor: zoom-in;
+    height: 230px;
+    max-width: 350px;
     overflow: hidden;
-    cursor: pointer;
-}
-
-.card-image {
-    overflow: hidden;
-}
-
-.card img {
-    transition: transform .4s ease;
-    z-index: 1;
-}
-
-.card:hover img {
-    transform: scale(1.1) rotate(1deg);
 }
 
 .card-title {
-    font-family: "Merriweather", serif;
+    font-family: var(--serif-font);
 }
 
-p {
-    font-size: .8em;
+.card-image img {
+    min-height: 100%;
+}
+
+.gallery__body .card:hover img {
+    transform: scale(1.2) rotate(1deg);
+}
+
+.gallery__body .card:active img {
+    transform: scale(1.1);
+}
+
+.gallery__body .card-image {
+    justify-content: center;
+    min-height: 100%;
+}
+
+.gallery__body .card-image img {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    text-align: center;
+    transition: transform .4s ease;
+    width: 120%;
+    z-index: 1;
+}
+
+.gallery__showcase {
+    align-items: center;
+    background-color: var(--black-trans);
+    bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity .2s ease, visibility .2s ease;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.gallery__showcase.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery__showcase .showcase-close {
+    color: var(--dough-white);
+    cursor: pointer;
+    font-size: 2em;
+    position: absolute;
+    right: 2em;
+    top: 1em;
+}
+
+.gallery__showcase .card {
+    max-height: 75%;
+    max-width: 75%;
+    opacity: 0;
+    transform: scale(.75);
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.gallery__showcase.show .card {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery__showcase .card-image {
+    height: 600px;
+    cursor: zoom-out;
+}
+
+.gallery__showcase .card-image img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
 }

@@ -1,0 +1,30 @@
+:root {
+    font-size: 12px;
+}
+
+.laluna--about {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: none !important;
+    transition: width ease .2s;
+    width: 100vh;
+}
+
+.card-header {
+    transition: all ease .2s;
+    cursor: pointer;
+}
+
+h3, h4 {
+    font-weight: 700;
+}
+
+ul {
+    margin-left: 20px;
+}

@@ -13,17 +13,23 @@
     <!-- Google Fonts => Merriweather + Italic, Lato -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather:400,400i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/galleryStyle.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <title>Gallerie - La Luna Ristorante</title>
 </head>
 
 <body>
+    <!-- Scroll to top button -->
+    <button id="js-scroll-button" onclick="scrollToTop()" type="button"
+        class="btn btn-primary scroll-button rounded-circle">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <!-- La Luna Navbar -->
     <div class="laluna__navbar">
         <nav class="navbar navbar-expand-lg">
             <div class="navbar-brand">La Luna Ristorante</div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse navbar-dark" id="navbarNavDropdown">
                 <ul class="nav navbar-nav">
@@ -80,7 +86,7 @@
                         <a class="nav-link" href="/sites/about.html">
                             <span>
                                 <i class="fas fa-info"></i>
-                                About
+                                Info
                             </span>
                         </a>
                     </li>
@@ -108,100 +114,52 @@
             </div>
         </div>
         <div class="laluna__body">
-            <div class="container gallery__body">
+            <div id="js-gallery-showcase" class="gallery__showcase" onclick="hideImage()">
+                <div class="showcase-close" onclick="hideImage()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img id="js-showcase-image" src="" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h3 id="js-showcase-title" class="card-title"></h3>
+                        <p id="js-showcase-description" class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="js-gallery-body" class="container gallery__body">
+                <template id="js-row-template">
+                    <div class="card mb-4 mr-4" onclick="showImage('${image.url}', '${image.title}', '${image.desc}')">
+                        <div class="card-image">
+                            <img src="${image.url}" title="${image.title}" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <!-- La Luna Footer -->
+        <div class="laluna__footer">
+            <div class="container">
                 <div class="row">
-                    <div class="card-deck">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaentrance.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Unser Eingangsbereich</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to additional
-                                    content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaterasse1.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Unsere Terrasse</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunatable1.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Reservierter Tisch</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h4>Ristorante La Luna</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="card-deck">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaterasse2.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Wir veranstalten auch Grill-Events</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaentrance.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Lorem Ipsum</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaentrance.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Lorem Ipsum</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
+                    <div class="col">
+                        <span>Inh. Fam. Yalcin</span>
+                        <span>Steedener Hauptstraße 11</span>
+                        <span>65594 Runkel-Steeden</span>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="card-deck">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaentrance.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Lorem Ipsum</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaentrance.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Lorem Ipsum</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="/images/lalunaentrance.png" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Lorem Ipsum</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet quius et deliquirum</p>
-                            </div>
-                        </div>
+                    <div class="col-md-6 col-sm-12">
+                        <a href="tel:+49-6482-91-99-13-0">
+                            +49 (0) 6482 91 99 130
+                        </a>
+                        <a href="mailto:info@ristorante-la-luna.de">
+                            info@ristorante-la-luna.de
+                        </a>
+                        <a href="">Impressum</a>
                     </div>
                 </div>
             </div>
@@ -209,6 +167,12 @@
     </div>
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/ba3f47d944.js" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Scroll to top -->
+    <script src="/scripts/scrollToTop.js"></script>
+    <!-- Gallery Script -->
+    <script src="/scripts/gallery.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

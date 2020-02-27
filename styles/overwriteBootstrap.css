@@ -1,15 +1,23 @@
-.card .card-header {
-    font-family: "Merriweather", serif;
+.card {
+    transition: backround-color .2s ease !important;
 }
 
-.bg-danger {
+.card .card-header {
+    font-family: var(--serif);
+}
+
+[class*="bg-"] {
+    color: bisque !important;
+}
+
+[class*="-danger"] {
     background-color: brown !important;
 }
 
-.bg-warning {
+[class*="-warning"] {
     background-color: orangered !important;
 }
 
-.bg-success {
+[class*="-success"] {
     background-color: green !important;
 }

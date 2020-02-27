@@ -22,6 +22,11 @@
 </head>
 
 <body data-spy="scroll" data-target="#laluna__navbar" data-offset="0">
+    <!-- Scroll to top button -->
+    <button id="js-scroll-button" onclick="scrollToTop()" type="button"
+        class="btn btn-primary scroll-button rounded-circle">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <!-- La Luna Navbar -->
     <div class="laluna__navbar">
         <nav id="laluna__navbar" class="navbar navbar-expand-xl">
@@ -79,13 +84,17 @@
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sites/about.html">
-                            <span>
-                                <i class="fas fa-info"></i>
-                                About
-                            </span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="info-dropdown">
+                            <a class="dropdown-item" href="/sites/about.html#contact">Kontakt</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/sites/about.html#about-legal-notice">Impressum</a>
+                            <a class="dropdown-item" href="/sites/about.html#about-data-protection">Datenschutzerklärung</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -162,12 +171,12 @@
                                 <!-- Carousel Controllers -->
                                 <a class="carousel-control-prev" href="#pictures-carousel" role="button"
                                     data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="fas fa-chevron-left" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#pictures-carousel" role="button"
                                     data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="fas fa-chevron-right" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
@@ -178,17 +187,15 @@
                 <div id="hours-approach" class="row">
                     <!-- Opening Hours -->
                     <div class="col-lg-5 col-md-12">
-                        <div class="card card--opening-times text-white bg-danger mb-4" height="100%">
+                        <div id="js-opening-times" class="card card--opening-times text-white bg-danger" height="100%">
                             <div class="card-header">
                                 <span>
-                                    <i class="fas fa-door-open"></i>
+                                    <i id="js-door-icon" class="fas fa-door-open"></i>
                                     Öffnungszeiten
                                 </span>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    <!-- <i class="fas fa-door-closed"></i>
-                                    &nbsp; -->
+                                <h5 id="js-opening-times-title" class="card-title">
                                     Wir haben zurzeit geschlossen
                                 </h5>
                                 <table>
@@ -234,7 +241,8 @@
                             <div class="card-maps">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.6256994744886!2d8.121671449608577!3d50.417976373166525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc3360161384cd%3A0x60532917aaa97af3!2sRestaurante%20La%20Luna!5e0!3m2!1sde!2sde!4v1582616217163!5m2!1sde!2sde"
-                                    width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                    width="100%" height="300" frameborder="0" style="border:0;"
+                                    allowfullscreen=""></iframe>
                             </div>
                         </div>
                     </div>
@@ -242,7 +250,7 @@
                 <!-- Menu Card -->
                 <div class="row">
                     <div class="col">
-                        <div id="menu" class="card">
+                        <div id="menu" class="card card--menu">
                             <div class="card-header">
                                 <span>
                                     <i class="fas fa-pizza-slice"></i>
@@ -263,11 +271,11 @@
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#menu-carousel" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="fas fa-chevron-left" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#menu-carousel" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="fas fa-chevron-right" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
@@ -285,7 +293,7 @@
                                     Inhaber
                                 </span>
                             </div>
-                            <div class="card mb-4">
+                            <div class="card">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="images/lalunaibrahimyalcin.png" class="card-img" alt="...">
@@ -308,11 +316,11 @@
                     </div>
                     <!-- Web Presence -->
                     <div class="col-lg-4 col-sm-12">
-                        <div class="card card--social">
+                        <div class="card card--social mb-4">
                             <div class="card-header">
                                 <span>
                                     <i class="fas fa-heart"></i>
-                                    Wo Sie uns finden können
+                                    Social Media
                                 </span>
                             </div>
                             <div class="card--social-body">
@@ -325,9 +333,27 @@
                                     <a href="https://www.yelp.de/biz/la-luna-runkel" target="_blank" title="Yelp"
                                         class="fab fa-yelp social-link social-link--yelp"></a>
                                 </div>
-                                <div>
-                                    <a href="https://www.yelp.de/biz/la-luna-runkel" target="_blank" title="Yelp"
-                                    class="fab fa-google social-link social-link--google"></a>
+                            </div>
+                        </div>
+                        <div class="card card--contact">
+                            <div class="card-header">
+                                <span>
+                                    <i class="fas fa-phone-alt"></i>
+                                    Kontakt
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="contact-item">
+                                    <i class="fas fa-at"></i>
+                                    <a href="mailto:info@ristorante-la-luna.de">
+                                        info@ristorante-la-luna.de
+                                    </a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+49-6482-91-99-13-0">
+                                        +49 (0) 6482 91 99 130
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -335,6 +361,7 @@
                 </div>
             </div>
         </div>
+        <!-- La Luna Footer -->
         <div class="laluna__footer">
             <div class="container">
                 <div class="row">
@@ -350,7 +377,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <a href="tel:+49-6482-91-99-13-0">
-                            +49 6482 91 99 130
+                            +49 (0) 6482 91 99 130
                         </a>
                         <a href="mailto:info@ristorante-la-luna.de">
                             info@ristorante-la-luna.de
@@ -360,13 +387,14 @@
                 </div>
             </div>
         </div>
+        <!-- Main Script -->
+        <script src="/scripts/script.js"></script>
+        <!-- Scroll to top -->
+        <script src="/scripts/scrollToTop.js"></script>
         <!-- JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/ba3f47d944.js" crossorigin="anonymous"></script>
-        <!-- Main Script -->
-        <script src="scripts/script.js"></script>
         <!-- Bootstrap JavaScript -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

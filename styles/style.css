@@ -20,26 +20,36 @@
     }
 }
 
+@media screen and (max-width: 992px) {}
+
 :root {
     --black: #1a120c;
     --brown: #953e0c;
     --dough-white: bisque;
     --green: #1ebb33;
     --red: #bb2b1e;
+    --sans-serif-font: "Lato", sans-serif;
+    --serif-font: "Merriweather", serif;
     --white: whitesmoke;
     --wine-red: brown;
     --wine-red-trans: #160207ec;
+    font-size: 13px;
+}
+
+.shrink-out {
+    transform: scale(.5) !important;
+    opacity: 0;
 }
 
 body {
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
-    background: url("/images/lalunatable2blurred.png") no-repeat center center fixed;
+    background: url("/images/lalunatable2blurreddark.png") no-repeat center center fixed;
     background-size: cover;
-    font-family: "Lato", sans-serif;
+    font-family: var(--sans-serif-font);
     height: 100%;
-    overflow: auto;
+    overflow-y: scroll;
     position: relative;
 }
 
@@ -48,19 +58,24 @@ body {
     padding: 7rem;
 }
 
+.scroll-button {
+    position: fixed;
+    right: 40px;
+    bottom: 5%;
+    z-index: 999;
+    transition: transform .2s ease, opacity .2s ease;
+    transform: scale(2);
+}
+
 .laluna__navbar {
     background-color: var(--wine-red-trans);
     color: var(--dough-white) !important;
     left: 0;
+    padding: 0 2rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 99;
-}
-
-.laluna__navbar ul:last-child {
-    float: right;
-    position: absolute;
 }
 
 .navbar-brand {
@@ -77,26 +92,30 @@ body {
 }
 
 .nav-item {
+    overflow: hidden;
     padding: .25em 1em;
     position: relative;
-    overflow: hidden;
-    /* border-radius: .25rem; */
+    margin-right: 5px;
 }
 
-.nav-item+.nav-item {
-    margin-left: 5px;
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-item.dropdown .fa-caret-down {
+    margin-left: 10px
 }
 
 .nav-item::before {
-    height: 100%;
+    border-bottom: solid 2px var(--dough-white);
     content: "";
-    width: 0px;
+    height: 100%;
+    left: 0px;
     position: absolute;
     top: 0px;
-    border-bottom: solid 2px var(--dough-white);
-    left: 0px;
-    z-index: -1;
     transition: width .4s ease-out, color .2s ease;
+    width: 0px;
+    z-index: -1;
 }
 
 .nav-item:hover.nav-item::before, .nav-item.active::before {
@@ -112,7 +131,11 @@ body {
 }
 
 .laluna__header {
+    align-items: center;
     color: var(--dough-white);
+    display: flex;
+    height: 60vh;
+    justify-content: center;
     text-align: center;
     text-shadow: 0px 0px 5px #000000;
 }
@@ -127,7 +150,7 @@ body {
 }
 
 .laluna__header .subtitle {
-    font-family: "Merriweather", serif;
+    font-family: var(--serif-font);
     font-size: 1.3rem;
 }
 
@@ -136,7 +159,7 @@ body {
 }
 
 .laluna__body {
-    font-family: "Lato", sans-serif;
+    font-family: var(--sans-serif-font);
     font-size: 1.3rem;
     margin-bottom: 14rem;
 }
@@ -145,11 +168,11 @@ body {
     margin-top: 30px;
 }
 
-.carousel-control-next, .carousel-control-prev {
+[class*="carousel-control-"] {
     transition: background-color .2s ease;
 }
 
-.carousel-control-next:hover, .carousel-control-prev:hover {
+[class*="carousel-control-"]:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -169,7 +192,7 @@ body {
 .card-header {
     align-items: center;
     display: flex;
-    font-family: "Merriweather", serif;
+    font-family: var(--serif-font) !important;
     font-weight: 700;
     justify-content: space-between;
 }
@@ -182,18 +205,13 @@ body {
     font-size: .7em;
 }
 
-.card--opening-times {
-    height: 358px;
-}
-
 .card--opening-times .card-body {
     text-align: center;
 }
 
 .card--opening-times .card-title {
-    /* font-family: "Merriweather", serif; */
-    font-weight: 700;
     border: 1px solid var(--dough-white);
+    font-weight: 700;
     padding: 15px;
 }
 
@@ -203,10 +221,6 @@ body {
 
 .card--opening-times th {
     font-size: 1.1em;
-}
-
-#hours-approach {
-    /* align-items: center; */
 }
 
 .card--approach .card-maps {
@@ -255,7 +269,48 @@ body {
 }
 
 .card--social .social-link--google {
-    background-color: #d32323;
+    background-color: #2361d3;
+}
+
+.card--contact .contact-item {
+    align-items: center;
+    border: 1px solid var(--red);
+    cursor: pointer;
+    display: flex;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.contact-item .fas {
+    align-items: center;
+    background-color: var(--wine-red);
+    color: var(--dough-white);
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 75px;
+}
+
+.contact-item a {
+    color: var(--red);
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color .2s ease;
+}
+
+.row {
+    align-items: center;
+}
+
+.contact-item:hover {
+    background-color: var(--wine-red);
+}
+
+.contact-item:hover a {
+    color: var(--dough-white);
+}
+
+.contact-item+.contact-item {
+    margin-top: 20px;
 }
 
 .laluna__sidebar {
@@ -277,13 +332,13 @@ body {
 }
 
 .laluna__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     background-color: #000000ca;
-    padding: 4% 16%;
+    bottom: 0;
     color: var(--dough-white);
+    left: 0;
+    padding: 4% 16%;
+    position: absolute;
+    width: 100%;
 }
 
 .laluna__footer [class^="col"] {
