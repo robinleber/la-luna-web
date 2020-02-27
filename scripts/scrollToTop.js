@@ -1,11 +1,6 @@
 // Get scroll button
 const scrollButton = document.getElementById("js-scroll-button");
 
-// Hide scroll button on load
-window.onload = () => {
-    scrollButton.classList.toggle("shrink-out", true);
-}
-
 // Trigger scroll function
 window.onscroll = () => { scrollFunction() };
 
