@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
     <!-- Title Icon -->
     <link rel="icon" href="/images/laluna-icon.ico" type="image/x-icon">
     <!-- Bootstrap CSS -->
@@ -12,8 +11,10 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Google Fonts => Merriweather + Italic, Lato -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather:400,400i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/galleryStyle.css">
+    <!-- Main CSS -->
     <link rel="stylesheet" href="/styles/style.css">
+    <!-- Gallery CSS -->
+    <link rel="stylesheet" href="/styles/galleryStyle.css">
     <title>Gallerie - La Luna Ristorante</title>
 </head>
 
@@ -26,7 +27,7 @@
     <!-- La Luna Navbar -->
     <div class="laluna__navbar">
         <nav class="navbar navbar-expand-lg">
-            <div class="navbar-brand">La Luna Ristorante</div>
+            <a href="/index.html#home" class="navbar-brand">La Luna</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-bars"></span>
@@ -83,7 +84,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/sites/about.html">
+                        <a class="nav-link" href="/info.html">
                             <span>
                                 <i class="fas fa-info"></i>
                                 Info
@@ -102,12 +103,12 @@
                     <div class="col title">
                         <!-- Header => Bootstrap Jumbotron -->
                         <div class="jumbotron" style="background: transparent;">
-                            <h1 class="display-4">La Luna Ristorante</h1>
+                            <img title="Ristorante Pizzeria La Luna" src="/images/lalunalogotransparent.png" height="200" alt="">
                             <p class="subtitle">Runkel-Steeden</p>
                             <hr class="my-4">
-                            <h1>
+                            <h2>
                                 Gallerie
-                            </h1>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -122,17 +123,13 @@
                     <div class="card-image">
                         <img id="js-showcase-image" src="" class="card-img-top" alt="...">
                     </div>
-                    <div class="card-body">
-                        <h3 id="js-showcase-title" class="card-title"></h3>
-                        <p id="js-showcase-description" class="card-text"></p>
-                    </div>
                 </div>
             </div>
             <div id="js-gallery-body" class="container gallery__body">
                 <template id="js-row-template">
-                    <div class="card mb-4 mr-4" onclick="showImage('${image.url}', '${image.title}', '${image.desc}')">
+                    <div class="card mb-4 mr-4" onclick="showImage('${image.url}')">
                         <div class="card-image">
-                            <img src="${image.url}" title="${image.title}" class="card-img-top" alt="...">
+                            <img src="${image.url}" class="card-img-top" alt="...">
                         </div>
                     </div>
                 </template>

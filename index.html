@@ -33,7 +33,7 @@
     <!-- La Luna Navbar -->
     <div class="laluna__navbar">
         <nav id="laluna__navbar" class="navbar navbar-expand-xl">
-            <div class="navbar-brand">La Luna Ristorante</div>
+            <a href="#home" class="navbar-brand">La Luna</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-bars"></span>
@@ -49,15 +49,15 @@
                             <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#pictures">
+                        <a class="nav-link" href="/gallerie.html">
                             <span>
                                 <i class="fas fa-images"></i>
-                                Bilder
+                                Gallerie
                             </span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hours-approach">
+                        <a class="nav-link" href="#hours">
                             <span>
                                 <i class="fas fa-clock"></i>
                                 Öffnungszeiten
@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hours-approach">
+                        <a class="nav-link" href="#approach">
                             <span>
                                 <i class="fas fa-car"></i>
                                 Anfahrt
@@ -87,17 +87,13 @@
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                    <li class="nav-item">
+                        <a class="nav-link" href="/info.html">
+                            <span>
+                                <i class="fas fa-info"></i>
+                                Info
+                            </span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -117,11 +113,11 @@
         <!-- La Luna Header -->
         <div class="laluna__header">
             <div id="home" class="container">
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col title">
                         <!-- Header => Bootstrap Jumbotron -->
                         <div class="jumbotron" style="background: transparent;">
-                            <h1 class="display-4">La Luna Ristorante</h1>
+                            <img title="Ristorante Pizzeria La Luna" src="/images/lalunalogotransparent.png" height="200" alt="">
                             <p class="subtitle">Runkel-Steeden</p>
                             <hr class="my-4">
                             <p class="subtitle">
@@ -138,8 +134,56 @@
         <div id="laluna__body" class="laluna__body">
             <!-- Sub-Container -->
             <div class="container">
+                <!-- Web Presence -->
+                <div class="row mb-4">
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="card card--social">
+                            <div class="card-header">
+                                <span>
+                                    <i class="fas fa-heart"></i>
+                                    Social Media
+                                </span>
+                            </div>
+                            <div class="card--social-body">
+                                <div class="social-split">
+                                    <a href="https://www.facebook.com/Restaurante-La-Luna-371091586428778/"
+                                        target="_blank" title="Facebook"
+                                        class="fab fa-facebook social-link social-link--fb"></a>
+                                </div>
+                                <div class="social-split">
+                                    <a href="https://www.yelp.de/biz/la-luna-runkel" target="_blank" title="Yelp"
+                                        class="fab fa-yelp social-link social-link--yelp"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card card--contact">
+                            <div class="card-header">
+                                <span>
+                                    <i class="fas fa-phone-alt"></i>
+                                    Kontakt
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="contact-item">
+                                    <i class="fas fa-at"></i>
+                                    <a href="mailto:info@ristorante-la-luna.de">
+                                        info@ristorante-la-luna.de
+                                    </a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+49-6482-91-99-13-0">
+                                        +49 (0) 6482 91 99 130
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Pictures -->
-                <div id="pictures" class="row">
+                <div id="pictures" class="row mb-4">
                     <div class="col">
                         <div class="card card--pictures">
                             <div class="card-header">
@@ -147,10 +191,6 @@
                                     <i class="fas fa-images"></i>
                                     Bilder
                                 </span>
-                                <a class="card-link" href="sites/gallery.html">
-                                    Zur Gallerie&nbsp;
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
                             </div>
                             <!-- Pictures Carousel -->
                             <div id="pictures-carousel" class="carousel slide" data-ride="carousel">
@@ -188,9 +228,9 @@
                     </div>
                 </div>
                 <!-- Opening Hours & Approach -->
-                <div id="hours-approach" class="row">
+                <div class="row mb-4">
                     <!-- Opening Hours -->
-                    <div class="col-lg-5 col-md-12">
+                    <div id="hours" class="col-lg-5 col-md-12">
                         <div id="js-opening-times" class="card card--opening-times text-white bg-success" height="100%">
                             <div class="card-header">
                                 <span>
@@ -220,8 +260,10 @@
                                             <th colspan="2">Donnerstag ─ Sonntag</th>
                                         </tr>
                                         <tr>
-                                            <td colspan="1">11:00 - 14:30 Uhr</td>
-                                            <td colspan="1">17:00 - 22:30 Uhr</td>
+                                            <td colspan="2">11:00 - 14:30 Uhr</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">17:00 - 22:30 Uhr</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -229,7 +271,7 @@
                         </div>
                     </div>
                     <!-- Approach -->
-                    <div class="col-lg-7 col-md-12">
+                    <div id="approach" class="col-lg-7 col-md-12">
                         <div class="card card--approach">
                             <div class="card-header">
                                 <span>
@@ -252,7 +294,7 @@
                     </div>
                 </div>
                 <!-- Menu Card -->
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col">
                         <div id="menu" class="card card--menu">
                             <div class="card-header">
@@ -287,7 +329,7 @@
                     </div>
                 </div>
                 <!-- Owner & Web Presence -->
-                <div class="row">
+                <div class="row mb-4">
                     <!-- Owner -->
                     <div class="col-lg-8 col-sm-12 mb-4">
                         <div id="owner" class="card card--owner">
@@ -318,50 +360,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Web Presence -->
-                    <div class="col-lg-4 col-sm-12">
-                        <div class="card card--social mb-4">
-                            <div class="card-header">
-                                <span>
-                                    <i class="fas fa-heart"></i>
-                                    Social Media
-                                </span>
-                            </div>
-                            <div class="card--social-body">
-                                <div class="social-split">
-                                    <a href="https://www.facebook.com/Restaurante-La-Luna-371091586428778/"
-                                        target="_blank" title="Facebook"
-                                        class="fab fa-facebook social-link social-link--fb"></a>
-                                </div>
-                                <div class="social-split">
-                                    <a href="https://www.yelp.de/biz/la-luna-runkel" target="_blank" title="Yelp"
-                                        class="fab fa-yelp social-link social-link--yelp"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card card--contact">
-                            <div class="card-header">
-                                <span>
-                                    <i class="fas fa-phone-alt"></i>
-                                    Kontakt
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div class="contact-item">
-                                    <i class="fas fa-at"></i>
-                                    <a href="mailto:info@ristorante-la-luna.de">
-                                        info@ristorante-la-luna.de
-                                    </a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a href="tel:+49-6482-91-99-13-0">
-                                        +49 (0) 6482 91 99 130
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -386,7 +384,7 @@
                         <a href="mailto:info@ristorante-la-luna.de">
                             info@ristorante-la-luna.de
                         </a>
-                        <a href="/sites/about.html#legal-notice">Impressum</a>
+                        <a href="/info.html#legal-notice">Impressum</a>
                     </div>
                 </div>
             </div>

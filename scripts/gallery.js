@@ -327,14 +327,10 @@ $(document).keyup((e) => {
 });
 
 let isShowCaseVisible = false;
-function showImage(imageURL, imageTitle, imageDesc) {
+function showImage(imageURL) {
     const showcase = document.getElementById("js-gallery-showcase");
     const image = document.getElementById("js-showcase-image");
-    const title = document.getElementById("js-showcase-title");
-    const desc = document.getElementById("js-showcase-description");
     image.src = imageURL;
-    title.innerHTML = imageTitle;
-    desc.innerHTML = imageDesc;
     isShowCaseVisible = !isShowCaseVisible;
     isShowCaseVisible ?
         showcase.classList.toggle("show", isShowCaseVisible):

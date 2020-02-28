@@ -1,12 +1,8 @@
-:root {
-    font-size: 12px;
-}
-
 .laluna--about {
     align-items: center;
+    flex-direction: column;
     display: flex;
     width: 100%;
-    flex-direction: row;
     justify-content: center;
 }
 
@@ -19,12 +15,4 @@
 .card-header {
     transition: all ease .2s;
     cursor: pointer;
-}
-
-h3, h4 {
-    font-weight: 700;
-}
-
-ul {
-    margin-left: 20px;
 }

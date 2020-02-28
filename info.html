@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
     <!-- Title Icon -->
     <link rel="icon" href="/images/laluna-icon.ico" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/aboutStyle.css">
+    <!-- Google Fonts => Merriweather + Italic, Lato -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather:400,400i&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- Info CSS -->
+    <link rel="stylesheet" href="/styles/infoStyle.css">
     <title>Impressum - La Luna Ristorante</title>
 </head>
 
@@ -23,7 +27,7 @@
     <!-- La Luna Navbar -->
     <div class="laluna__navbar">
         <nav class="navbar navbar-expand-lg">
-            <div class="navbar-brand">La Luna Ristorante</div>
+            <a href="#home" class="navbar-brand">La Luna</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">
+                        <a class="nav-link" href="gallerie.html">
                             <span>
                                 <i class="fas fa-images"></i>
                                 Gallerie
@@ -80,7 +84,7 @@
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/sites/about.html">
+                        <a class="nav-link" href="/info.html">
                             <span>
                                 <i class="fas fa-info"></i>
                                 Info
@@ -92,16 +96,35 @@
         </nav>
     </div>
     <div class="laluna laluna--about">
+        <!-- La Luna Header -->
+        <div class="laluna__header">
+            <div id="home" class="container">
+                <div class="row mb-4">
+                    <div class="col title">
+                        <!-- Header => Bootstrap Jumbotron -->
+                        <div class="jumbotron" style="background: transparent;">
+                            <img title="Ristorante Pizzeria La Luna" src="/images/lalunalogotransparent.png"
+                                height="200" alt="">
+                            <p class="subtitle">Runkel-Steeden</p>
+                            <hr class="my-4">
+                            <h2>
+                                Info
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="laluna__body">
             <div class="accordion mb-5" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
                         aria-expanded="true" aria-controls="collapseThree">
-                        <h2 class="mb-0">
+                        <h3 class="mb-0">
                             Kontakt
-                        </h2>
+                        </h3>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
                         data-parent="#accordionExample">
                         <div class="card-body">
                             Foo Bar
@@ -111,11 +134,10 @@
                 <div class="card">
                     <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne">
-                        <h2 class="mb-0">
+                        <h3 class="mb-0">
                             Impressum
-                        </h2>
+                        </h3>
                     </div>
-
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                             <h4>Angaben gemäß § 5 TMG</h4>
@@ -135,8 +157,8 @@
                                 </span><br />
                                 <span>
                                     E-Mail:
-                                    <a href="mailto:yalcin@ristorante-la-luna.de">
-                                        yalcin@ristorante-la-luna.de
+                                    <a href="mailto:info@ristorante-la-luna.de">
+                                        info@ristorante-la-luna.de
                                     </a>
                                 </span>
                             </p>
@@ -197,12 +219,11 @@
                 <div class="card">
                     <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <h2 class="mb-0">
+                        <h3 class="mb-0">
                             Datenschutzerklärung
-                        </h2>
+                        </h3>
                     </div>
-                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                        data-parent="#accordionExample">
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
                             <h3>1. Datenschutz auf einen Blick</h3>
                             <h4>Allgemeine Hinweise</h4>
@@ -329,8 +350,8 @@
                                 </span><br />
                                 <span>
                                     E-Mail:
-                                    <a href="mailto:yalcin@ristorante-la-luna.de">
-                                        yalcin@ristorante-la-luna.de
+                                    <a href="mailto:info@ristorante-la-luna.de">
+                                        info@ristorante-la-luna.de
                                     </a>
                                 </span><br /><br />
                                 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder
@@ -700,8 +721,8 @@
                     <a href="tel:+49-6482-91-99-13-0">
                         +49 (0) 6482 91 99 130
                     </a>
-                    <a href="mailto:yalcin@ristorante-la-luna.de">
-                        yalcin@ristorante-la-luna.de
+                    <a href="mailto:info@ristorante-la-luna.de">
+                        info@ristorante-la-luna.de
                     </a>
                     <a href="#legal-notice">Impressum</a>
                 </div>

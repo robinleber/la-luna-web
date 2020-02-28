@@ -10,7 +10,7 @@
     "rewrites": [
       {
         "source": "/gallery",
-        "function": "/sites/gallery.html"
+        "function": "/gallerie.html"
       }
     ]
   }
