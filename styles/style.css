@@ -24,14 +24,17 @@
     .card--opening-times, .card--social {
         margin-bottom: 1.5rem !important;
     }
-
-    .card--contact .col-lg-6 + .col-lg-6 {
+    .card--contact .card-body {
+        flex-wrap: wrap !important;
+    }
+    .card--contact .col-lg-6+.col-lg-6 {
         margin-top: 1.5rem;
     }
 }
 
 :root {
     --black: #1a120c;
+    --blue: #286aab;
     --brown: #953e0c;
     --dough-white: #ffe4c4;
     --green: #1ebb33;
@@ -45,8 +48,8 @@
 }
 
 .shrink-out {
-    transform: scale(.5) !important;
     opacity: 0;
+    transform: scale(.5) !important;
 }
 
 body {
@@ -57,7 +60,6 @@ body {
     background-size: cover;
     font-family: var(--sans-serif-font);
     height: 100%;
-    overflow-y: scroll;
     position: relative;
 }
 
@@ -67,12 +69,12 @@ body {
 }
 
 .scroll-button {
+    bottom: 5%;
     position: fixed;
     right: 40px;
-    bottom: 5%;
-    z-index: 999;
+    transform: scale(1.5);
     transition: transform .2s ease, opacity .2s ease;
-    transform: scale(2);
+    z-index: 999;
 }
 
 .laluna__navbar {
@@ -87,9 +89,9 @@ body {
 }
 
 .navbar-brand {
+    color: var(--dough-white);
     font-family: "Buffet Script";
     text-decoration: none;
-    color: var(--dough-white);
 }
 
 .navbar-brand:hover {
@@ -106,34 +108,37 @@ body {
 }
 
 .nav-item {
+    margin-right: 5px;
     overflow: hidden;
     padding: .25em 1em;
     position: relative;
-    margin-right: 5px;
 }
 
 .nav-item:last-child {
     margin-right: 0;
 }
 
-.nav-item.dropdown .fa-caret-down {
-    margin-left: 10px
-}
+.nav-item.dropdown .fa-caret-down {}
 
 .nav-item::before {
-    border-bottom: solid 2px var(--dough-white);
+    background-color: var(--dough-white);
+    bottom: 0;
     content: "";
-    height: 100%;
-    left: 0px;
+    height: 6%;
+    left: 0;
+    opacity: 0;
     position: absolute;
-    top: 0px;
-    transition: width .4s ease-out, color .2s ease;
-    width: 0px;
+    right: 0;
+    top: 94%;
+    transform: scaleX(0);
+    transform-origin: 50%;
+    transition: transform .3s ease-out, opacity .3s ease-out;
     z-index: -1;
 }
 
 .nav-item:hover.nav-item::before, .nav-item.active::before {
-    width: 100%;
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .nav-link span {
@@ -174,9 +179,9 @@ body {
 .laluna__header .subtitle {
     font-family: var(--serif-font);
     font-size: 1.3rem;
-    text-align: center;
-    max-width: 600px;
     margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
 }
 
 .laluna__header hr {
@@ -195,6 +200,15 @@ body {
 
 [class*="carousel-control-"]:hover {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+#pictures-carousel .carousel-item {
+    height: 550px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    margin: auto 0;
 }
 
 .card {
@@ -230,14 +244,50 @@ body {
     font-size: .7em;
 }
 
+.card--news .card-body {
+    align-items: center;
+    background-color: var(--wine-red);
+    color: var(--dough-white);
+    display: flex;
+    font-family: "Merriweather", serif;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.card--news .card-body p {
+    width: 100%;
+}
+
+.card--news .card-body p span {
+    float: right;
+}
+
 .card--opening-times .card-body {
     text-align: center;
 }
 
 .card--opening-times .card-title {
     border: 1px solid var(--dough-white);
+    border-radius: .25rem;
     font-weight: 700;
     padding: 15px;
+    transition: color .3s ease, background-color .3s ease;
+}
+
+.card--opening-times .card-title:hover {
+    background-color: var(--dough-white);
+}
+
+.bg-success .card-title:hover {
+    color: var(--green);
+}
+
+.bg-warning .card-title:hover {
+    color: orangered;
+}
+
+.bg-danger .card-title:hover {
+    color: var(--red);
 }
 
 .card--opening-times table {
@@ -252,10 +302,6 @@ body {
     align-items: stretch;
     display: flex;
     width: 100%;
-}
-
-.card--owner {
-    padding-bottom: 0;
 }
 
 .card--social-body {
@@ -304,12 +350,11 @@ body {
 
 .card--contact .contact-item {
     align-items: center;
-    border: 1px solid var(--wine-red);
-    text-align: center;
     cursor: pointer;
     display: flex;
+    height: 50px;
+    position: relative;
     width: 100%;
-    transition: background-color .3s ease, color .3s ease;
 }
 
 .contact-item .fas {
@@ -317,25 +362,29 @@ body {
     background-color: var(--wine-red);
     color: var(--dough-white);
     display: flex;
-    height: 50px;
-    justify-content: center;
+    height: 100%;
+    padding-left: 30px;
+    position: absolute;
+    transition: width .3s ease;
     width: 75px;
 }
 
 .contact-item a {
     color: var(--red);
-    text-decoration: none;
+    margin-left: 75px;
     text-align: center;
-    width: 100%;
+    text-decoration: none;
     transition: color .2s ease;
+    width: 100%;
+    z-index: 1;
 }
 
 .row {
     align-items: center;
 }
 
-.contact-item:hover {
-    background-color: var(--wine-red);
+.contact-item:hover .fas {
+    width: 100%;
 }
 
 .contact-item:hover a {

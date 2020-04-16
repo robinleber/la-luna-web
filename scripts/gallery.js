@@ -260,11 +260,6 @@ const gallery = [
         "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
     },
     {
-        "url": "/images/gallery/gallery-pic\ (52).jpeg",
-        "title": "Lorem Ipsum",
-        "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
-    },
-    {
         "url": "/images/gallery/gallery-pic\ (53).jpeg",
         "title": "Lorem Ipsum",
         "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
@@ -275,27 +270,12 @@ const gallery = [
         "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
     },
     {
-        "url": "/images/gallery/gallery-pic\ (55).jpeg",
-        "title": "Lorem Ipsum",
-        "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
-    },
-    {
         "url": "/images/gallery/gallery-pic\ (56).jpeg",
         "title": "Lorem Ipsum",
         "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
     },
     {
-        "url": "/images/gallery/gallery-pic\ (57).jpeg",
-        "title": "Lorem Ipsum",
-        "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
-    },
-    {
         "url": "/images/gallery/gallery-pic\ (58).jpeg",
-        "title": "Lorem Ipsum",
-        "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
-    },
-    {
-        "url": "/images/gallery/gallery-pic\ (59).jpeg",
         "title": "Lorem Ipsum",
         "desc": "Lorem ipsum dolor sit amet, quius et deliquirum",
     },

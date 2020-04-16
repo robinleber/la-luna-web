@@ -1,18 +1,11 @@
-window.onload = () => {
-    // Check time every second
-    setInterval(() => {
-        determineDayTime();
-    }, 1000);
-}
-
 let hours = {
+    /* Sun */ 0: { open: [1130, 1700], closed: [1430, 2130] },
     /* Mon */ 1: {},
-    /* Tue */ 2: { open: [1700], closed: [2230] },
-    /* Wed */ 3: { open: [1700], closed: [2230] },
-    /* Thu */ 4: { open: [1100, 1700], closed: [1430, 2230] },
-    /* Fri */ 5: { open: [1100, 1700], closed: [1430, 2230] },
-    /* Sat */ 6: { open: [1100, 1700], closed: [1430, 2230] },
-    /* Sun */ 7: { open: [1100, 1700], closed: [1430, 2230] },
+    /* Tue */ 2: { open: [1700], closed: [2130] },
+    /* Wed */ 2: { open: [1700], closed: [2130] },
+    /* Thu */ 2: { open: [1700], closed: [2130] },
+    /* Fri */ 2: { open: [1700], closed: [2130] },
+    /* Sat */ 2: { open: [1700], closed: [2130] },
 }
 
 function determineDayTime() {
@@ -24,26 +17,36 @@ function determineDayTime() {
         for (let i = 0; i < hours[day].open.length; i++) { // Iterate through opening hours
             for (let j = 0; j < hours[day].closed.length; j++) { // Iterate trough closing hours
                 if (hours[day].open[i] <= time && time < hours[day].closed[i]) { // Is opening hours at pos. "i" < current time < closing hours at pos. "i"?
-                    if (hours[day].closed[i] - time <= 30) {
+                    if (hours[day].closed[i] - time <= 30) { // Is closing time - current time < or = 30?
                         isOpen = "soonClosing"; // We're closing soon
                     } else {
                         isOpen = "open"; // We're Open!
                     }
                     break; // Break second loop
                 } else {
-                    isOpen = "closed"; // We're Closed!
+                    if (time - hours[day].open[i] <= 30) {
+                        isOpen = "soonOpening";
+                        break;
+                    } else {
+                        isOpen = "closed"; // We're Closed!
+                    }
                 }
             }
             // Second if-statement to break second loop
             if (hours[day].open[i] <= time && time < hours[day].closed[i]) { // Is opening hours at pos. "i" < current time < closing hours at pos. "i"?
-                if (hours[day].closed[i] - time <= 30) {
+                if (hours[day].closed[i] - time <= 30) { // Is closing time - current time < or = 30?
                     isOpen = "soonClosing"; // We're closing soon
                 } else {
                     isOpen = "open"; // We're Open!
                 }
                 break; // Break second loop
             } else {
-                isOpen = "closed"; // We're Closed!
+                if (time - hours[day].open[i] <= 30) {
+                    isOpen = "soonOpening";
+                    break;
+                } else {
+                    isOpen = "closed"; // We're Closed!
+                }
             }
         }
     } else {
@@ -71,7 +74,19 @@ const doorIcon = document.getElementById("js-door-icon");
 const openingTimesTitle = document.getElementById("js-opening-times-title");
 
 function toggleDoor(isOpen) {
-    if (isOpen === "open") {
+    if (isOpen === "soonOpening") {
+        /**
+         * Set background to green
+         * Open door
+         * Set title to "We're Open"
+         */
+        openingTimes.classList.toggle("bg-danger", false);
+        openingTimes.classList.toggle("bg-warning", true);
+        openingTimes.classList.toggle("bg-success", false);
+        doorIcon.classList.toggle("fa-door-open", false);
+        doorIcon.classList.toggle("fa-door-closed", true);
+        openingTimesTitle.innerHTML = "Wir öffnen in Kürze";
+    } else if (isOpen === "open") {
         /**
          * Set background to green
          * Open door
@@ -94,7 +109,7 @@ function toggleDoor(isOpen) {
         openingTimes.classList.toggle("bg-success", false);
         doorIcon.classList.toggle("fa-door-open", true);
         doorIcon.classList.toggle("fa-door-closed", false);
-        openingTimesTitle.innerHTML = "Wir schließen in kürze";
+        openingTimesTitle.innerHTML = "Wir schließen in Kürze";
     } else {
         /**
          * Set background to red
