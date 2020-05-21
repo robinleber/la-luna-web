@@ -11,7 +11,7 @@
 }
 
 [class*="-warning"] {
-    background-color: orangered !important;
+    background-color: rgb(209, 56, 0) !important;
 }
 
 [class*="-success"] {

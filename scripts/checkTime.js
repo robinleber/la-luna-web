@@ -1,11 +1,11 @@
 let hours = {
-    /* Sun */ 0: { open: [1130, 1700], closed: [1430, 2130] },
+    /* Sun */ 0: { open: [1130, 1700], closed: [1400, 2230] },
     /* Mon */ 1: {},
-    /* Tue */ 2: { open: [1700], closed: [2130] },
-    /* Wed */ 2: { open: [1700], closed: [2130] },
-    /* Thu */ 2: { open: [1700], closed: [2130] },
-    /* Fri */ 2: { open: [1700], closed: [2130] },
-    /* Sat */ 2: { open: [1700], closed: [2130] },
+    /* Tue */ 2: { open: [1700], closed: [2230] },
+    /* Wed */ 3: { open: [1700], closed: [2230] },
+    /* Thu */ 4: { open: [1130, 1700], closed: [1400, 2230] },
+    /* Fri */ 5: { open: [1130, 1700], closed: [1400, 2230] },
+    /* Sat */ 6: { open: [1130, 1700], closed: [1400, 2230] },
 }
 
 function determineDayTime() {
@@ -24,12 +24,7 @@ function determineDayTime() {
                     }
                     break; // Break second loop
                 } else {
-                    if (time - hours[day].open[i] <= 30) {
-                        isOpen = "soonOpening";
-                        break;
-                    } else {
-                        isOpen = "closed"; // We're Closed!
-                    }
+                    isOpen = "closed"; // We're Closed!
                 }
             }
             // Second if-statement to break second loop
@@ -41,12 +36,7 @@ function determineDayTime() {
                 }
                 break; // Break second loop
             } else {
-                if (time - hours[day].open[i] <= 30) {
-                    isOpen = "soonOpening";
-                    break;
-                } else {
-                    isOpen = "closed"; // We're Closed!
-                }
+                isOpen = "closed"; // We're Closed!
             }
         }
     } else {
@@ -57,7 +47,7 @@ function determineDayTime() {
 
 // Get Time with format => "hhmm"
 function getTime() {
-    let hoursString = `${new Date().getUTCHours() + 1}`; // Get Hours
+    let hoursString = `${new Date().getUTCHours() + 2}`; // Get Hours
     let minutesString = `${new Date().getUTCMinutes()}`; // Get Minutes
     let minutes = new Date().getUTCMinutes();
     if (minutes < 10) { // Are Minutes < 10
@@ -74,19 +64,7 @@ const doorIcon = document.getElementById("js-door-icon");
 const openingTimesTitle = document.getElementById("js-opening-times-title");
 
 function toggleDoor(isOpen) {
-    if (isOpen === "soonOpening") {
-        /**
-         * Set background to green
-         * Open door
-         * Set title to "We're Open"
-         */
-        openingTimes.classList.toggle("bg-danger", false);
-        openingTimes.classList.toggle("bg-warning", true);
-        openingTimes.classList.toggle("bg-success", false);
-        doorIcon.classList.toggle("fa-door-open", false);
-        doorIcon.classList.toggle("fa-door-closed", true);
-        openingTimesTitle.innerHTML = "Wir öffnen in Kürze";
-    } else if (isOpen === "open") {
+    if (isOpen === "open") {
         /**
          * Set background to green
          * Open door
