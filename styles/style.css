@@ -287,7 +287,7 @@ body {
 }
 
 .bg-success .card-title:hover {
-    color: var(--green);
+    color: #52682e;
 }
 
 .bg-warning .card-title:hover {
