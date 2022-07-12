@@ -1,9 +1,9 @@
 window.onload = () => {
     determineDayTime();
-    // Check time every second
+    // Check time once every minute
     setInterval(() => {
         determineDayTime();
-    }, 1000);
+    }, 60000);
 }
 
 $(document).ready(function () {

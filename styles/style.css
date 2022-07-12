@@ -21,14 +21,25 @@
 }
 
 @media screen and (max-width: 992px) {
-    .card--opening-times, .card--social {
+    .card--opening-times,
+    .card--social {
         margin-bottom: 1.5rem !important;
     }
     .card--contact .card-body {
         flex-wrap: wrap !important;
     }
-    .card--contact .col-lg-6+.col-lg-6 {
+    .card--contact .col-lg-6 + .col-lg-6 {
         margin-top: 1.5rem;
+    }
+
+    #menu-carousel {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #resp-menu-carousel {
+        display: none;
     }
 }
 
@@ -49,7 +60,7 @@
 
 .shrink-out {
     opacity: 0;
-    transform: scale(.5) !important;
+    transform: scale(0.5) !important;
 }
 
 body {
@@ -73,7 +84,7 @@ body {
     position: fixed;
     right: 40px;
     transform: scale(1.5);
-    transition: transform .2s ease, opacity .2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
     z-index: 999;
 }
 
@@ -110,15 +121,13 @@ body {
 .nav-item {
     margin-right: 5px;
     overflow: hidden;
-    padding: .25em 1em;
+    padding: 0.25em 1em;
     position: relative;
 }
 
 .nav-item:last-child {
     margin-right: 0;
 }
-
-.nav-item.dropdown .fa-caret-down {}
 
 .nav-item::before {
     background-color: var(--dough-white);
@@ -132,11 +141,12 @@ body {
     top: 94%;
     transform: scaleX(0);
     transform-origin: 50%;
-    transition: transform .3s ease-out, opacity .3s ease-out;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     z-index: -1;
 }
 
-.nav-item:hover.nav-item::before, .nav-item.active::before {
+.nav-item:hover.nav-item::before,
+.nav-item.active::before {
     opacity: 1;
     transform: scaleX(1);
 }
@@ -195,7 +205,7 @@ body {
 }
 
 [class*="carousel-control-"] {
-    transition: background-color .2s ease;
+    transition: background-color 0.2s ease;
 }
 
 [class*="carousel-control-"]:hover {
@@ -203,7 +213,7 @@ body {
 }
 
 #pictures-carousel .carousel-item {
-    height: 550px;
+    max-height: 550px;
 }
 
 .carousel-item img {
@@ -212,7 +222,7 @@ body {
 }
 
 .card {
-    transition: backround-color .2s ease;
+    transition: backround-color 0.2s ease;
 }
 
 .card:not([class*="bg-"]) {
@@ -241,7 +251,11 @@ body {
 }
 
 .card-header a {
-    font-size: .7em;
+    font-size: 0.7em;
+}
+
+.card--news .card-header {
+    color: darkolivegreen !important;
 }
 
 .card--news .card-body {
@@ -267,7 +281,7 @@ body {
 }
 
 .card--opening-times {
-    height: 325px;
+    height: 350px;
 }
 
 .card--opening-times .card-body {
@@ -276,25 +290,22 @@ body {
 
 .card--opening-times .card-title {
     border: 1px solid var(--dough-white);
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     font-weight: 700;
     padding: 15px;
-    transition: color .3s ease, background-color .3s ease;
-}
-
-.card--opening-times .card-title:hover {
+    transition: color 0.3s ease, background-color 0.3s ease;
     background-color: var(--dough-white);
 }
 
-.bg-success .card-title:hover {
+.bg-success .card-title {
     color: #52682e;
 }
 
-.bg-warning .card-title:hover {
+.bg-warning .card-title {
     color: orangered;
 }
 
-.bg-danger .card-title:hover {
+.bg-danger .card-title {
     color: var(--red);
 }
 
@@ -326,7 +337,7 @@ body {
 }
 
 .card--social-body {
-    border-radius: 0 0 .25rem .25rem;
+    border-radius: 0 0 0.25rem 0.25rem;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -344,7 +355,7 @@ body {
     padding: 1rem;
     text-align: center;
     text-decoration: none;
-    transition: transform .2s ease;
+    transition: transform 0.2s ease;
     width: 100%;
 }
 
@@ -353,7 +364,7 @@ body {
 }
 
 .card--social .social-link--fb {
-    background-color: #4267B2;
+    background-color: #4267b2;
 }
 
 .card--social .social-link--yelp {
@@ -386,7 +397,7 @@ body {
     height: 100%;
     padding-left: 30px;
     position: absolute;
-    transition: width .3s ease;
+    transition: width 0.3s ease;
     width: 75px;
 }
 
@@ -395,7 +406,7 @@ body {
     margin-left: 75px;
     text-align: center;
     text-decoration: none;
-    transition: color .2s ease;
+    transition: color 0.2s ease;
     width: 100%;
     z-index: 1;
 }

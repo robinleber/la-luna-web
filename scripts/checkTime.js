@@ -1,11 +1,16 @@
 let hours = {
-    /* Sun */ 0: { open: [256, 1700], closed: [1400, 2130] },
-    /* Mon */ 1: { open: [256, 1700], closed: [1400, 2130] },
-    /* Tue */ 2: { open: [1700], closed: [2130] },
-    /* Wed */ 3: { open: [1700], closed: [2130] },
-    /* Thu */ 4: { open: [1700], closed: [2130] },
-    /* Fri */ 5: { open: [1700], closed: [2130] },
-    /* Sat */ 6: { open: [1700], closed: [2130] },
+    /**
+     * Example:
+     * { open: [0800, 1600], closed: [1200, 2200]}
+     */
+
+    /* Sun */ 0: { open: [1100, 1700], closed: [1400, 2200] },
+    /* Mon */ 1: {},
+    /* Tue */ 2: { open: [1700], closed: [2200] },
+    /* Wed */ 3: { open: [1700], closed: [2200] },
+    /* Thu */ 4: { open: [1700], closed: [2200] },
+    /* Fri */ 5: { open: [1700], closed: [2200] },
+    /* Sat */ 6: { open: [1700], closed: [2200] },
 }
 
 function determineDayTime() {
