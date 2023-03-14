@@ -7,22 +7,27 @@ let hours = {
     /* Sun */ 0: { open: [1100, 1700], closed: [1400, 2200] },
     /* Mon */ 1: {},
     /* Tue */ 2: { open: [1700], closed: [2200] },
-    /* Wed */ 3: { open: [1700], closed: [2200] },
-    /* Thu */ 4: { open: [1700], closed: [2200] },
-    /* Fri */ 5: { open: [1700], closed: [2200] },
-    /* Sat */ 6: { open: [1700], closed: [2200] },
-}
+    /* Sun */ 0: { open: [1100, 1700], closed: [1400, 2200] },
+    /* Sun */ 0: { open: [1100, 1700], closed: [1400, 2200] },
+    /* Sun */ 0: { open: [1100, 1700], closed: [1400, 2200] },
+    /* Sun */ 0: { open: [1100, 1700], closed: [1400, 2200] },
+};
 
 function determineDayTime() {
     let isOpen = "closed";
     let day = new Date().getDay(); // Get day index => #0-6
     let time = getTime(); // Get time with format "hhmm"
     time = parseInt(time); // Parse time to Integer
-    if (!jQuery.isEmptyObject(hours[day])) { // Is object at pos. "day" empty?
-        for (let i = 0; i < hours[day].open.length; i++) { // Iterate through opening hours
-            for (let j = 0; j < hours[day].closed.length; j++) { // Iterate trough closing hours
-                if (hours[day].open[i] <= time && time < hours[day].closed[i]) { // Is opening hours at pos. "i" < current time < closing hours at pos. "i"?
-                    if (hours[day].closed[i] - time <= 30) { // Is closing time - current time < or = 30?
+    if (!jQuery.isEmptyObject(hours[day])) {
+        // Is object at pos. "day" empty?
+        for (let i = 0; i < hours[day].open.length; i++) {
+            // Iterate through opening hours
+            for (let j = 0; j < hours[day].closed.length; j++) {
+                // Iterate trough closing hours
+                if (hours[day].open[i] <= time && time < hours[day].closed[i]) {
+                    // Is opening hours at pos. "i" < current time < closing hours at pos. "i"?
+                    if (hours[day].closed[i] - time <= 30) {
+                        // Is closing time - current time < or = 30?
                         isOpen = "soonClosing"; // We're closing soon
                     } else {
                         isOpen = "open"; // We're Open!
@@ -33,8 +38,10 @@ function determineDayTime() {
                 }
             }
             // Second if-statement to break second loop
-            if (hours[day].open[i] <= time && time < hours[day].closed[i]) { // Is opening hours at pos. "i" < current time < closing hours at pos. "i"?
-                if (hours[day].closed[i] - time <= 30) { // Is closing time - current time < or = 30?
+            if (hours[day].open[i] <= time && time < hours[day].closed[i]) {
+                // Is opening hours at pos. "i" < current time < closing hours at pos. "i"?
+                if (hours[day].closed[i] - time <= 30) {
+                    // Is closing time - current time < or = 30?
                     isOpen = "soonClosing"; // We're closing soon
                 } else {
                     isOpen = "open"; // We're Open!
@@ -55,7 +62,8 @@ function getTime() {
     let hoursString = `${new Date().getUTCHours() + 2}`; // Get Hours
     let minutesString = `${new Date().getUTCMinutes()}`; // Get Minutes
     let minutes = new Date().getUTCMinutes();
-    if (minutes < 10) { // Are Minutes < 10
+    if (minutes < 10) {
+        // Are Minutes < 10
         minutesString = `0${minutes}`; // Place "0" before Minutes (e.g. "5" => "05")
     }
     return `${hoursString}${minutesString}`; // Return String with format => "hhmm"

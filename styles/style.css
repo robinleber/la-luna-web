@@ -11,7 +11,7 @@
     src: url("../types/Buffet\ Script.otf");
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .laluna {
         padding: 7rem 0 !important;
     }
@@ -20,7 +20,7 @@
     }
 }
 
-@media screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
     .card--opening-times,
     .card--social {
         margin-bottom: 1.5rem !important;
@@ -37,7 +37,7 @@
     }
 }
 
-@media screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
     #resp-menu-carousel {
         display: none;
     }
@@ -63,6 +63,10 @@
     transform: scale(0.5) !important;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -77,6 +81,10 @@ body {
 .laluna {
     height: 100%;
     padding: 7rem;
+}
+
+#news, #pictures, #hours, #approach, #menu, #owner {
+    scroll-margin-top: 80px;
 }
 
 .scroll-button {
